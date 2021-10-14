@@ -3,7 +3,7 @@
 
 <head>
   <title>Track</title>
-  <h1 align="left" style="color:fuchsia">Animal Hunt Keerthana </h1>
+  <h1 align="left" style="color:fuchsia">Animal Hunt Keerthana Ragut</h1>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -17,6 +17,9 @@
 <p align="middle" style="font-family: Georgia, 'Times New Roman', Times, serif;">Click on the squares to search for wild life</p>
 <p id="tries" align="middle" style="font-family: sans-serif;">Number of tries is zero.</p>
 <p id="distance" align="middle">Distance is unknown.</p>
+<br>
+<button onclick= "reset()">Reset</button>
+<br>
 <div class="container">
     <div class="container row">
       <div class="col-sm-2"><img src="tree.PNG" id="PurpleTree-0" onclick="check(0)" width="200" height="200" alt="Tree"></div>
@@ -97,6 +100,16 @@ function distance(pos1, pos2) {
                 }
                 var animaldistance = Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1));
                 return animaldistance;
+        }
+        function reset() {
+                triesCount = 0
+                animalLocation = Math.round(Math.random() * (23 + 0))
+                document.getElementById("tries").innerHTML = "Number of tries is zero"
+                for (var i = 0; i <= 23; i++) {
+                  if(purple_tree_array[i] == purple_tree_array[animalLocation])
+                        document.getElementById(purple_tree_array[i]).src = "animal.jpg"
+                }
+
         }
 
 </script>
